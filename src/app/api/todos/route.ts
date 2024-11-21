@@ -3,7 +3,7 @@ import prisma from '@/app/lib/prisma';
 export async function GET(): Promise<Response> {
   try {
     const res = await prisma.todo.findMany();
-    const currentTime = new Date().toISOString();
+    const currentTime = new Date();
 
     return Response.json({
       currentTime,
